@@ -10,15 +10,24 @@ import SwiftUI
 struct ContentView: View {
     
     var emojis = ["🚗", "🚕", "🚙", "🚌", "🚎", "🏎", "🚓", "🚑", "🚒", "🚐", "🛻", "🚚", "🚛", "🚜", "🦼", "🛴", "🚲", "🛵", "🏍", "🛺", "🚔", "🚍", "🚘", "🚖"]
-    @State var emojiCount = 6
+    @State var emojiCount = 4
+    
+    let columns = [
+        GridItem(.adaptive(minimum: 70))
+    ]
     
     var body: some View {
         VStack {
-            HStack {
-                ForEach(emojis[0..<emojiCount], id: \.self) { emoji in
-                    CardView(content: emoji)
+            ScrollView {
+                LazyVGrid(columns: columns) {
+                    ForEach(emojis[0..<emojiCount], id: \.self) { emoji in
+                        CardView(content: emoji)
+                            .aspectRatio(2/3, contentMode: .fit)
+                    }
                 }
             }
+            .foregroundColor(.red)
+            Spacer()
             HStack {
                 remove
                 Spacer()
@@ -27,7 +36,7 @@ struct ContentView: View {
             .padding(.vertical)
         }
         .padding(.horizontal)
-        .foregroundColor(.red)
+        
     }
     var remove: some View {
         Button {
@@ -41,7 +50,7 @@ struct ContentView: View {
                 .frame(width: 30, height: 30)
                 .padding()
                 .foregroundColor(.white)
-                .background(Circle().foregroundColor(.red))
+                .background(Circle().foregroundColor(.blue))
         }
     }
     var add: some View {
@@ -56,7 +65,7 @@ struct ContentView: View {
                 .frame(width: 30, height: 30)
                 .padding()
                 .foregroundColor(.white)
-                .background(Circle().foregroundColor(.red))
+                .background(Circle().foregroundColor(.blue))
         }
     }
 }
@@ -80,7 +89,7 @@ struct CardView: View {
             let shape = RoundedRectangle(cornerRadius: 20)
             if isFaceUp {
                 shape.fill().foregroundColor(.white)
-                shape.stroke(lineWidth: 3)
+                shape.strokeBorder(lineWidth: 3)
                 Text(content)
             } else {
                 shape.fill()
