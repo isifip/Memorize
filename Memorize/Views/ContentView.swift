@@ -1,16 +1,10 @@
-//
-//  ContentView.swift
-//  Memorize
-//
-//  Created by Irakli Sokhaneishvili on 21.01.22.
-//
 
 import SwiftUI
 
 struct ContentView: View {
     
     var emojis = ["🚗", "🚕", "🚙", "🚌", "🚎", "🏎", "🚓", "🚑", "🚒", "🚐", "🛻", "🚚", "🚛", "🚜", "🦼", "🛴", "🚲", "🛵", "🏍", "🛺", "🚔", "🚍", "🚘", "🚖"]
-    @State var emojiCount = 4
+    @State var emojiCount = 20
     
     let columns = [
         GridItem(.adaptive(minimum: 70))
@@ -27,53 +21,13 @@ struct ContentView: View {
                 }
             }
             .foregroundColor(.red)
-            Spacer()
-            HStack {
-                remove
-                Spacer()
-                add
-            }
-            .padding(.vertical)
         }
         .padding(.horizontal)
-        
-    }
-    var remove: some View {
-        Button {
-            if emojiCount > 1 {
-                emojiCount -= 1
-            }
-        } label: {
-            Image(systemName: "minus")
-                .resizable()
-                .scaledToFit()
-                .frame(width: 30, height: 30)
-                .padding()
-                .foregroundColor(.white)
-                .background(Circle().foregroundColor(.blue))
-        }
-    }
-    var add: some View {
-        Button {
-            if emojiCount < emojis.count {
-                emojiCount += 1
-            }
-        } label: {
-            Image(systemName: "plus")
-                .resizable()
-                .scaledToFit()
-                .frame(width: 30, height: 30)
-                .padding()
-                .foregroundColor(.white)
-                .background(Circle().foregroundColor(.blue))
-        }
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
-            .preferredColorScheme(.dark)
         ContentView()
             .preferredColorScheme(.light)
     }
@@ -90,7 +44,7 @@ struct CardView: View {
             if isFaceUp {
                 shape.fill().foregroundColor(.white)
                 shape.strokeBorder(lineWidth: 3)
-                Text(content)
+                Text(content).font(.largeTitle)
             } else {
                 shape.fill()
             }
