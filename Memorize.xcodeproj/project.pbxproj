@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C7048C53279EECC50058E269 /* AspectVGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7048C52279EECC50058E269 /* AspectVGrid.swift */; };
 		C750E2AD279B16120065780D /* MemorizeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C750E2AC279B16120065780D /* MemorizeApp.swift */; };
 		C750E2AF279B16120065780D /* EmojyMemoryGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C750E2AE279B16120065780D /* EmojyMemoryGameView.swift */; };
 		C750E2B1279B16130065780D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C750E2B0279B16130065780D /* Assets.xcassets */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C7048C52279EECC50058E269 /* AspectVGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AspectVGrid.swift; sourceTree = "<group>"; };
 		C750E2A9279B16120065780D /* Memorize.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Memorize.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C750E2AC279B16120065780D /* MemorizeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemorizeApp.swift; sourceTree = "<group>"; };
 		C750E2AE279B16120065780D /* EmojyMemoryGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojyMemoryGameView.swift; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				C750E2AE279B16120065780D /* EmojyMemoryGameView.swift */,
+				C7048C52279EECC50058E269 /* AspectVGrid.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -170,6 +173,7 @@
 				C7529135279C463700923F8D /* MemoryGame.swift in Sources */,
 				C750E2AF279B16120065780D /* EmojyMemoryGameView.swift in Sources */,
 				C750E2AD279B16120065780D /* MemorizeApp.swift in Sources */,
+				C7048C53279EECC50058E269 /* AspectVGrid.swift in Sources */,
 				C7529138279C484C00923F8D /* EmojiMemoryGame.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
