@@ -10,10 +10,18 @@ struct EmojyMemoryGameView: View {
     
     //MARK: --> Body
     var body: some View {
-        VStack {
-            gameBody
+        ZStack(alignment: .bottom) {
+            VStack {
+                gameBody
+                
+                HStack {
+                    restart
+                    Spacer()
+                    shuffle
+                }
+                .padding(.horizontal)
+            }
             deckBody
-            shuffle
         }
         .padding()
     }
@@ -96,6 +104,18 @@ struct EmojyMemoryGameView: View {
         } label: {
             Text("Shuffle")
         }
+    }
+    
+    var restart: some View {
+        Button {
+            withAnimation {
+                dealt = []
+                game.restart()
+            }
+        } label: {
+            Text("Restart")
+        }
+
     }
     
     private struct CardConstants {
